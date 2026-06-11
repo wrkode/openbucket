@@ -179,6 +179,7 @@ build-debugging:
 build: checks build-debugging ## builds openbucket to $(PWD)
 	@echo "Building openbucket binary to './openbucket'"
 	@CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build -tags kqueue -trimpath --ldflags "$(LDFLAGS)" -o $(PWD)/openbucket 1>/dev/null
+	@ln -sf openbucket $(PWD)/minio # compatibility name; test buildscripts still invoke ./minio
 
 docker: build ## builds openbucket docker container
 	@echo "Building openbucket docker image '$(TAG)'"
@@ -191,8 +192,10 @@ test-resiliency: build
 install-race: checks build-debugging ## builds openbucket to $(PWD)
 	@echo "Building openbucket binary with -race to './openbucket'"
 	@GORACE=history_size=7 CGO_ENABLED=1 go build -tags kqueue,dev -race -trimpath --ldflags "$(LDFLAGS)" -o $(PWD)/openbucket 1>/dev/null
+	@ln -sf openbucket $(PWD)/minio # compatibility name; test buildscripts still invoke ./minio
 	@echo "Installing openbucket binary with -race to '$(GOPATH)/bin/openbucket'"
 	@mkdir -p $(GOPATH)/bin && cp -af $(PWD)/openbucket $(GOPATH)/bin/openbucket
+	@ln -sf openbucket $(GOPATH)/bin/minio
 
 install: build ## builds openbucket and installs it to $GOPATH/bin.
 	@echo "Installing openbucket binary to '$(GOPATH)/bin/openbucket'"

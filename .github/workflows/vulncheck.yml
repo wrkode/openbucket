@@ -3,10 +3,12 @@ on:
   pull_request:
     branches:
       - master
+      - openbucket-main
 
   push:
     branches:
       - master
+      - openbucket-main
 
 permissions:
   contents: read # to fetch code (actions/checkout)
