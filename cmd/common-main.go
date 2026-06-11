@@ -295,40 +295,10 @@ func initConsoleServer() (*consoleapi.Server, error) {
 }
 
 // Check for updates and print a notification message
-func checkUpdate(mode string) {
-	updateURL := minioReleaseInfoURL
-	if runtime.GOOS == globalWindowsOSName {
-		updateURL = minioReleaseWindowsInfoURL
-	}
-
-	u, err := url.Parse(updateURL)
-	if err != nil {
-		return
-	}
-
-	if currentReleaseTime.IsZero() {
-		return
-	}
-
-	_, lrTime, err := getLatestReleaseTime(u, 2*time.Second, mode)
-	if err != nil {
-		return
-	}
-
-	var older time.Duration
-	var downloadURL string
-	if lrTime.After(currentReleaseTime) {
-		older = lrTime.Sub(currentReleaseTime)
-		downloadURL = getDownloadURL(releaseTimeToReleaseTag(lrTime))
-	}
-
-	updateMsg := prepareUpdateMessage(downloadURL, older)
-	if updateMsg == "" {
-		return
-	}
-
-	logger.Info(prepareUpdateMessage("Run `mc admin update ALIAS`", lrTime.Sub(currentReleaseTime)))
-}
+// checkUpdate is disabled in OpenBucket: the upstream dl.min.io release
+// feed no longer receives community updates and does not describe
+// OpenBucket releases.
+func checkUpdate(mode string) {}
 
 func newConfigDir(dir string, dirSet bool, getDefaultDir func() string) (*ConfigDir, error) {
 	if dir == "" {

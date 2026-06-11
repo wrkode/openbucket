@@ -1,12 +1,18 @@
 #!/bin/sh
 #
 
-# If command starts with an option, prepend minio.
-if [ "${1}" != "minio" ]; then
+# If command starts with an option, prepend openbucket.
+if [ "${1}" != "openbucket" ] && [ "${1}" != "minio" ]; then
 	if [ -n "${1}" ]; then
-		set -- minio "$@"
+		set -- openbucket "$@"
 	fi
 fi
+
+# OPENBUCKET_* variables are canonical; legacy MINIO_* names keep working.
+MINIO_USERNAME="${OPENBUCKET_USERNAME:-${MINIO_USERNAME}}"
+MINIO_GROUPNAME="${OPENBUCKET_GROUPNAME:-${MINIO_GROUPNAME}}"
+MINIO_UID="${OPENBUCKET_UID:-${MINIO_UID}}"
+MINIO_GID="${OPENBUCKET_GID:-${MINIO_GID}}"
 
 docker_switch_user() {
 	if [ -n "${MINIO_USERNAME}" ] && [ -n "${MINIO_GROUPNAME}" ]; then

@@ -339,10 +339,11 @@ func (a adminAPIHandlers) ServerUpdateHandler(w http.ResponseWriter, r *http.Req
 	updateURL := vars["updateURL"]
 	mode := getMinioMode()
 	if updateURL == "" {
-		updateURL = minioReleaseInfoURL
-		if runtime.GOOS == globalWindowsOSName {
-			updateURL = minioReleaseWindowsInfoURL
-		}
+		// OpenBucket: there is no default update feed. The upstream
+		// dl.min.io feed would replace this binary with a stale MinIO
+		// build, so in-place update requires an explicit update URL.
+		writeErrorResponseJSON(ctx, w, errorCodes.ToAPIErr(ErrMethodNotAllowed), r.URL)
+		return
 	}
 
 	u, err := url.Parse(updateURL)
