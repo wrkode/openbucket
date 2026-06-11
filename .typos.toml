@@ -27,6 +27,8 @@ extend-ignore-re = [
 
 [type.go.extend-identifiers]
 "bui" = "bui"
+"cpy" = "cpy"
+"sterr" = "sterr"
 "dm2nd" = "dm2nd"
 "ot" = "ot"
 "ParseND" = "ParseND"
