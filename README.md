@@ -25,7 +25,7 @@ OpenBucket is a drop-in replacement for a MinIO server deployment:
 
 ### Build from source
 
-Requires Go 1.24 or later.
+Requires Go 1.25 or later.
 
 ```sh
 go install github.com/wrkode/openbucket@latest
