@@ -15,6 +15,7 @@ jobs:
     name: Build ${{ matrix.goos }}-${{ matrix.goarch }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - { goos: linux, goarch: amd64 }
@@ -38,11 +39,12 @@ jobs:
           GOARCH: ${{ matrix.goarch }}
         run: |
           TAG="${GITHUB_REF_NAME}"
+          # gen-ldflags must run on the host arch, not the target arch
           if [[ "${TAG}" == RELEASE.* ]]; then
             VERSION_TIME=$(echo "${TAG}" | sed 's#RELEASE\.\([0-9]\+\)-\([0-9]\+\)-\([0-9]\+\)T\([0-9]\+\)-\([0-9]\+\)-\([0-9]\+\)Z#\1-\2-\3T\4:\5:\6Z#')
-            LDFLAGS=$(MINIO_RELEASE=RELEASE go run buildscripts/gen-ldflags.go "${VERSION_TIME}")
+            LDFLAGS=$(GOOS= GOARCH= MINIO_RELEASE=RELEASE go run buildscripts/gen-ldflags.go "${VERSION_TIME}")
           else
-            LDFLAGS=$(go run buildscripts/gen-ldflags.go)
+            LDFLAGS=$(GOOS= GOARCH= go run buildscripts/gen-ldflags.go)
           fi
           EXT=""
           [[ "${GOOS}" == "windows" ]] && EXT=".exe"
