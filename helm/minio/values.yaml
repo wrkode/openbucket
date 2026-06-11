@@ -13,8 +13,8 @@ clusterDomain: cluster.local
 ## Set default image, imageTag, and imagePullPolicy. mode is used to indicate the
 ##
 image:
-  repository: quay.io/minio/minio
-  tag: RELEASE.2024-12-18T13-15-44Z
+  repository: ghcr.io/wrkode/openbucket
+  tag: RELEASE.2026-06-11T16-02-14Z
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
