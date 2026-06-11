@@ -1,174 +1,71 @@
-# Maintenance Mode
+# OpenBucket
 
-**This project is currently under maintenance and is not accepting new changes.**
+[![license](https://img.shields.io/badge/license-AGPL%20V3-blue)](https://github.com/wrkode/openbucket/blob/openbucket-main/LICENSE)
 
-- The codebase is in a maintenance-only state
-- No new features, enhancements, or pull requests will be accepted
-- Critical security fixes may be evaluated on a case-by-case basis
-- Existing issues and pull requests will not be actively reviewed
-- Community support continues on a best-effort basis through [Slack](https://slack.min.io)
+OpenBucket is a community-maintained fork of [MinIO](https://github.com/minio/minio), the high-performance, S3-compatible object storage server.
 
-For enterprise support and actively maintained versions, please see [MinIO AIStor](https://www.min.io/product/aistor).
+In late 2025 the upstream MinIO project stopped publishing community binary releases, removed the management features from the community web console, and was subsequently placed in maintenance mode and archived. OpenBucket exists to keep a fully usable, fully open community edition alive:
 
----
+- **Binary releases** — pre-built binaries and container images, built transparently with GitHub Actions
+- **Full web UI** — the complete management console (users, policies, replication, monitoring), not just an object browser
+- **S3 API compatibility** — unchanged from upstream MinIO
+- **AGPLv3** — same license as upstream, always
 
-# MinIO Quickstart Guide
+OpenBucket is not affiliated with or endorsed by MinIO, Inc. "MinIO" is a trademark of MinIO, Inc.
 
-[![Slack](https://slack.min.io/slack?type=svg)](https://slack.min.io) [![Docker Pulls](https://img.shields.io/docker/pulls/minio/minio.svg?maxAge=604800)](https://hub.docker.com/r/minio/minio/) [![license](https://img.shields.io/badge/license-AGPL%20V3-blue)](https://github.com/minio/minio/blob/master/LICENSE)
+## Migrating from MinIO
 
-[![MinIO](https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg?sanitize=true)](https://min.io)
+OpenBucket is a drop-in replacement for a MinIO server deployment:
 
-MinIO is a high-performance, S3-compatible object storage solution released under the GNU AGPL v3.0 license.
-Designed for speed and scalability, it powers AI/ML, analytics, and data-intensive workloads with industry-leading performance.
+- The on-disk format, S3 API, and admin API are unchanged.
+- Configuration uses `OPENBUCKET_*` environment variables (e.g. `OPENBUCKET_ROOT_USER`), but all legacy `MINIO_*` variables continue to work as a fallback. `_MINIO_*` debug variables map to `_OPENBUCKET_*` likewise.
+- Point the `openbucket` binary at your existing MinIO data directories and start it the same way you started `minio`.
 
-- S3 API Compatible – Seamless integration with existing S3 tools
-- Built for AI & Analytics – Optimized for large-scale data pipelines
-- High Performance – Ideal for demanding storage workloads.
+## Quickstart
 
-This README provides instructions for building MinIO from source and deploying onto baremetal hardware.
-Use the [MinIO Documentation](https://github.com/minio/docs) project to build and host a local copy of the documentation.
+### Build from source
 
-## MinIO is Open Source Software
-
-We designed MinIO as Open Source software for the Open Source software community. We encourage the community to remix, redesign, and reshare MinIO under the terms of the AGPLv3 license.
-
-All usage of MinIO in your application stack requires validation against AGPLv3 obligations, which include but are not limited to the release of modified code to the community from which you have benefited. Any commercial/proprietary usage of the AGPLv3 software, including repackaging or reselling services/features, is done at your own risk.
-
-The AGPLv3 provides no obligation by any party to support, maintain, or warranty the original or any modified work.
-All support is provided on a best-effort basis through Github and our [Slack](https//slack.min.io) channel, and any member of the community is welcome to contribute and assist others in their usage of the software.
-
-MinIO [AIStor](https://www.min.io/product/aistor) includes enterprise-grade support and licensing for workloads which require commercial or proprietary usage and production-level SLA/SLO-backed support. For more information, [reach out for a quote](https://min.io/pricing).
-
-## Source-Only Distribution
-
-**Important:** The MinIO community edition is now distributed as source code only. We will no longer provide pre-compiled binary releases for the community version.
-
-### Installing Latest MinIO Community Edition
-
-To use MinIO community edition, you have two options:
-
-1. **Install from source** using `go install github.com/minio/minio@latest` (recommended)
-2. **Build a Docker image** from the provided Dockerfile
-
-See the sections below for detailed instructions on each method.
-
-### Legacy Binary Releases
-
-Historical pre-compiled binary releases remain available for reference but are no longer maintained:
-- GitHub Releases: https://github.com/minio/minio/releases
-- Direct downloads: https://dl.min.io/server/minio/release/
-
-**These legacy binaries will not receive updates.** We strongly recommend using source builds for access to the latest features, bug fixes, and security updates.
-
-## Install from Source
-
-Use the following commands to compile and run a standalone MinIO server from source.
-If you do not have a working Golang environment, please follow [How to install Golang](https://golang.org/doc/install). Minimum version required is [go1.24](https://golang.org/dl/#stable)
+Requires Go 1.24 or later.
 
 ```sh
-go install github.com/minio/minio@latest
+go install github.com/wrkode/openbucket@latest
+openbucket server /data --console-address :9001
 ```
 
-You can alternatively run `go build` and use the `GOOS` and `GOARCH` environment variables to control the OS and architecture target.
-For example:
-
-```
-env GOOS=linux GOARCh=arm64 go build
-```
-
-Start MinIO by running `minio server PATH` where `PATH` is any empty folder on your local filesystem.
-
-The MinIO deployment starts using default root credentials `minioadmin:minioadmin`.
-You can test the deployment using the MinIO Console, an embedded web-based object browser built into MinIO Server.
-Point a web browser running on the host machine to <http://127.0.0.1:9000> and log in with the root credentials.
-You can use the Browser to create buckets, upload objects, and browse the contents of the MinIO server.
-
-You can also connect using any S3-compatible tool, such as the MinIO Client `mc` commandline tool:
+The server starts with default root credentials `minioadmin:minioadmin` unless `OPENBUCKET_ROOT_USER` / `OPENBUCKET_ROOT_PASSWORD` are set. Open <http://127.0.0.1:9001> for the web console, or connect any S3-compatible client to port 9000:
 
 ```sh
 mc alias set local http://localhost:9000 minioadmin minioadmin
 mc admin info local
 ```
 
-See [Test using MinIO Client `mc`](#test-using-minio-client-mc) for more information on using the `mc` commandline tool.
-For application developers, see <https://docs.min.io/enterprise/aistor-object-store/developers/sdk/> to view MinIO SDKs for supported languages.
-
-> [!NOTE]
-> Production environments using compiled-from-source MinIO binaries do so at their own risk.
-> The AGPLv3 license provides no warranties nor liabilites for any such usage.
-
-## Build Docker Image
-
-You can use the `docker build .` command to build a Docker image on your local host machine.
-You must first [build MinIO](#install-from-source) and ensure the `minio` binary exists in the project root.
-
-The following command builds the Docker image using the default `Dockerfile` in the root project directory with the repository and image tag `myminio:minio`
+### Container image
 
 ```sh
-docker build -t myminio:minio .
+docker run -p 9000:9000 -p 9001:9001 \
+  -e OPENBUCKET_ROOT_USER=admin -e OPENBUCKET_ROOT_PASSWORD=changeme123 \
+  ghcr.io/wrkode/openbucket:latest server /data --console-address :9001
 ```
 
-Use `docker image ls` to confirm the image exists in your local repository.
-You can run the server using standard Docker invocation:
+### Makefile
 
 ```sh
-docker run -p 9000:9000 -p 9001:9001 myminio:minio server /tmp/minio --console-address :9001
+make build    # builds ./openbucket
+make test     # builds and runs the test suite
+make docker   # builds the container image
 ```
 
-Complete documentation for building Docker containers, managing custom images, or loading images into orchestration platforms is out of scope for this documentation.
-You can modify the `Dockerfile` and `dockerscripts/docker-entrypoint.sh` as-needed to reflect your specific image requirements.
+## Project status
 
-See the [MinIO Container](https://docs.min.io/community/minio-object-store/operations/deployments/baremetal-deploy-minio-as-a-container.html#deploy-minio-container) documentation for more guidance on running MinIO within a Container image.
+OpenBucket forked from the final upstream commit of `minio/minio` (master, December 2025). Current goals, roughly in order:
 
-## Install using Helm Charts
+1. ~~Rebranded, building server with `OPENBUCKET_*`/`MINIO_*` dual env support~~ ✅
+2. Restore the full management console UI (based on the last full-featured `minio/console`)
+3. Automated release pipeline: cross-compiled binaries, checksums, signed container images
+4. Dependency and security updates
 
-There are two paths for installing MinIO onto Kubernetes infrastructure:
-
-- Use the [MinIO Operator](https://github.com/minio/operator)
-- Use the community-maintained [Helm charts](https://github.com/minio/minio/tree/master/helm/minio)
-
-See the [MinIO Documentation](https://docs.min.io/community/minio-object-store/operations/deployments/kubernetes.html) for guidance on deploying using the Operator.
-The Community Helm chart has instructions in the folder-level README.
-
-## Test MinIO Connectivity
-
-### Test using MinIO Console
-
-MinIO Server comes with an embedded web based object browser.
-Point your web browser to <http://127.0.0.1:9000> to ensure your server has started successfully.
-
-> [!NOTE]
-> MinIO runs console on random port by default, if you wish to choose a specific port use `--console-address` to pick a specific interface and port.
-
-### Test using MinIO Client `mc`
-
-`mc` provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff etc. It supports filesystems and Amazon S3 compatible cloud storage services.
-
-The following commands set a local alias, validate the server information, create a bucket, copy data to that bucket, and list the contents of the bucket.
-
-```sh
-mc alias set local http://localhost:9000 minioadmin minioadmin
-mc admin info
-mc mb data
-mc cp ~/Downloads/mydata data/
-mc ls data/
-```
-
-Follow the MinIO Client [Quickstart Guide](https://docs.min.io/community/minio-object-store/reference/minio-mc.html#quickstart) for further instructions.
-
-## Explore Further
-
-- [The MinIO documentation website](https://docs.min.io/community/minio-object-store/index.html)
-- [MinIO Erasure Code Overview](https://docs.min.io/community/minio-object-store/operations/concepts/erasure-coding.html)
-- [Use `mc` with MinIO Server](https://docs.min.io/community/minio-object-store/reference/minio-mc.html)
-- [Use `minio-go` SDK with MinIO Server](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/go/)
-
-## Contribute to MinIO Project
-
-Please follow MinIO [Contributor's Guide](https://github.com/minio/minio/blob/master/CONTRIBUTING.md) for guidance on making new contributions to the repository.
+Contributions are welcome — issues and pull requests are open.
 
 ## License
 
-- MinIO source is licensed under the [GNU AGPLv3](https://github.com/minio/minio/blob/master/LICENSE).
-- MinIO [documentation](https://github.com/minio/minio/tree/master/docs) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- [License Compliance](https://github.com/minio/minio/blob/master/COMPLIANCE.md)
+OpenBucket is licensed under the [GNU AGPLv3](LICENSE), the same license as the upstream MinIO project. Original code copyright MinIO, Inc.; modifications copyright OpenBucket contributors. See [COMPLIANCE.md](COMPLIANCE.md) for license compliance notes.
