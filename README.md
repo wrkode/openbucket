@@ -1,6 +1,6 @@
 # OpenBucket
 
-[![license](https://img.shields.io/badge/license-AGPL%20V3-blue)](https://github.com/wrkode/openbucket/blob/openbucket-main/LICENSE)
+[![license](https://img.shields.io/badge/license-AGPL%20V3-blue)](https://github.com/wrkode/openbucket/blob/main/LICENSE)
 
 OpenBucket is a community-maintained fork of [MinIO](https://github.com/minio/minio), the high-performance, S3-compatible object storage server.
 
