@@ -34,9 +34,9 @@ import (
 
 	"github.com/dustin/go-humanize"
 	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/logger"
-	"github.com/minio/minio/internal/mountinfo"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/mountinfo"
 	"github.com/minio/pkg/v3/env"
 	xnet "github.com/minio/pkg/v3/net"
 )

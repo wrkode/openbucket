@@ -25,7 +25,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	xioutil "github.com/minio/minio/internal/ioutil"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 )
 
 type muxServer struct {

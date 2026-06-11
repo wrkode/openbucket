@@ -33,11 +33,11 @@ import (
 
 	elasticsearch7 "github.com/elastic/go-elasticsearch/v7"
 	"github.com/minio/highwayhash"
-	"github.com/minio/minio/internal/event"
-	xhttp "github.com/minio/minio/internal/http"
-	"github.com/minio/minio/internal/logger"
-	"github.com/minio/minio/internal/once"
-	"github.com/minio/minio/internal/store"
+	"github.com/wrkode/openbucket/internal/event"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/once"
+	"github.com/wrkode/openbucket/internal/store"
 	xnet "github.com/minio/pkg/v3/net"
 	"github.com/pkg/errors"
 )

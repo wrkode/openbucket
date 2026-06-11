@@ -18,8 +18,8 @@
 package notify
 
 import (
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/event/target"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/event/target"
 )
 
 const (

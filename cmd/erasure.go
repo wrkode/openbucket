@@ -30,8 +30,8 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
-	"github.com/minio/minio/internal/dsync"
-	xioutil "github.com/minio/minio/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/dsync"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/minio/pkg/v3/sync/errgroup"
 )
 

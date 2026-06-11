@@ -28,10 +28,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/minio/minio/internal/auth"
-	"github.com/minio/minio/internal/crypto"
-	xhttp "github.com/minio/minio/internal/http"
-	xioutil "github.com/minio/minio/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/auth"
+	"github.com/wrkode/openbucket/internal/crypto"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/minio/pkg/v3/policy"
 	"github.com/minio/zipindex"
 )

@@ -27,7 +27,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	xhttp "github.com/minio/minio/internal/http"
+	xhttp "github.com/wrkode/openbucket/internal/http"
 )
 
 // A message is in the format specified in

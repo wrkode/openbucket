@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/minio/minio/internal/amztime"
-	"github.com/minio/minio/internal/bucket/lifecycle"
-	"github.com/minio/minio/internal/bucket/replication"
-	"github.com/minio/minio/internal/crypto"
-	"github.com/minio/minio/internal/hash/sha256"
-	xhttp "github.com/minio/minio/internal/http"
+	"github.com/wrkode/openbucket/internal/amztime"
+	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
+	"github.com/wrkode/openbucket/internal/bucket/replication"
+	"github.com/wrkode/openbucket/internal/crypto"
+	"github.com/wrkode/openbucket/internal/hash/sha256"
+	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/minio/pkg/v3/sync/errgroup"
 )
 

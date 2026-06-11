@@ -20,7 +20,7 @@ package compress
 import (
 	"strings"
 
-	"github.com/minio/minio/internal/config"
+	"github.com/wrkode/openbucket/internal/config"
 )
 
 // Legacy envs.

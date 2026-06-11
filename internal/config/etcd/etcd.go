@@ -23,8 +23,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/crypto"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/minio/pkg/v3/env"
 	xnet "github.com/minio/pkg/v3/net"
 	clientv3 "go.etcd.io/etcd/client/v3"

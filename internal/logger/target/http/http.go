@@ -33,11 +33,11 @@ import (
 	"time"
 
 	jsoniter "github.com/json-iterator/go"
-	xhttp "github.com/minio/minio/internal/http"
-	xioutil "github.com/minio/minio/internal/ioutil"
-	types "github.com/minio/minio/internal/logger/target/loggertypes"
-	"github.com/minio/minio/internal/once"
-	"github.com/minio/minio/internal/store"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
+	types "github.com/wrkode/openbucket/internal/logger/target/loggertypes"
+	"github.com/wrkode/openbucket/internal/once"
+	"github.com/wrkode/openbucket/internal/store"
 	xnet "github.com/minio/pkg/v3/net"
 	"github.com/valyala/bytebufferpool"
 )

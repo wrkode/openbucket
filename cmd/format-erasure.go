@@ -27,11 +27,11 @@ import (
 	"sync"
 
 	"github.com/dustin/go-humanize"
-	"github.com/minio/minio/internal/color"
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/config/storageclass"
-	xioutil "github.com/minio/minio/internal/ioutil"
-	"github.com/minio/minio/internal/logger"
+	"github.com/wrkode/openbucket/internal/color"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/config/storageclass"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/sync/errgroup"
 )
 

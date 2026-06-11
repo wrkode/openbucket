@@ -34,8 +34,8 @@ import (
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
-	xhttp "github.com/minio/minio/internal/http"
-	xioutil "github.com/minio/minio/internal/ioutil"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/minio/pkg/v3/randreader"
 )
 

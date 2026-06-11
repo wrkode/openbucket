@@ -32,15 +32,15 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/minio/minio-go/v7/pkg/s3utils"
 	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/minio/internal/grid"
+	"github.com/wrkode/openbucket/internal/grid"
 	xnet "github.com/minio/pkg/v3/net"
 
-	"github.com/minio/minio/internal/amztime"
-	"github.com/minio/minio/internal/config/dns"
-	"github.com/minio/minio/internal/crypto"
-	xhttp "github.com/minio/minio/internal/http"
-	"github.com/minio/minio/internal/logger"
-	"github.com/minio/minio/internal/mcontext"
+	"github.com/wrkode/openbucket/internal/amztime"
+	"github.com/wrkode/openbucket/internal/config/dns"
+	"github.com/wrkode/openbucket/internal/crypto"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/mcontext"
 )
 
 const (

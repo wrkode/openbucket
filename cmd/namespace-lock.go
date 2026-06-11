@@ -28,9 +28,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/minio/minio/internal/dsync"
-	"github.com/minio/minio/internal/logger"
-	"github.com/minio/minio/internal/lsync"
+	"github.com/wrkode/openbucket/internal/dsync"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/lsync"
 )
 
 // local lock servers
@@ -319,7 +319,7 @@ func getSource(n int) string {
 	if ok {
 		filename = pathutil.Base(filename)
 		funcName = strings.TrimPrefix(runtime.FuncForPC(pc).Name(),
-			"github.com/minio/minio/cmd.")
+			"github.com/wrkode/openbucket/cmd.")
 	} else {
 		filename = "<unknown>"
 		lineNum = 0

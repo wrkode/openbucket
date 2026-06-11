@@ -23,8 +23,8 @@ import (
 	"strconv"
 	"time"
 
-	xhttp "github.com/minio/minio/internal/http"
-	"github.com/minio/minio/internal/kms"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	"github.com/wrkode/openbucket/internal/kms"
 )
 
 const unavailable = "offline"

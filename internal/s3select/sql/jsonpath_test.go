@@ -27,7 +27,7 @@ import (
 	"testing"
 
 	"github.com/alecthomas/participle"
-	"github.com/minio/minio/internal/s3select/jstream"
+	"github.com/wrkode/openbucket/internal/s3select/jstream"
 )
 
 func getJSONStructs(b []byte) ([]any, error) {

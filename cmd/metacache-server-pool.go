@@ -28,8 +28,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/minio/minio/internal/grid"
-	xioutil "github.com/minio/minio/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/grid"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 )
 
 func renameAllBucketMetacache(epPath string) error {

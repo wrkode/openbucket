@@ -36,13 +36,13 @@ import (
 	"strings"
 
 	"github.com/minio/kms-go/kes"
-	"github.com/minio/minio/internal/crypto"
-	"github.com/minio/minio/internal/etag"
-	"github.com/minio/minio/internal/hash"
-	"github.com/minio/minio/internal/hash/sha256"
-	xhttp "github.com/minio/minio/internal/http"
-	"github.com/minio/minio/internal/kms"
-	"github.com/minio/minio/internal/logger"
+	"github.com/wrkode/openbucket/internal/crypto"
+	"github.com/wrkode/openbucket/internal/etag"
+	"github.com/wrkode/openbucket/internal/hash"
+	"github.com/wrkode/openbucket/internal/hash/sha256"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	"github.com/wrkode/openbucket/internal/kms"
+	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/sio"
 )
 

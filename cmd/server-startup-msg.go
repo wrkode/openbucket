@@ -25,8 +25,8 @@ import (
 
 	xnet "github.com/minio/pkg/v3/net"
 
-	"github.com/minio/minio/internal/color"
-	"github.com/minio/minio/internal/logger"
+	"github.com/wrkode/openbucket/internal/color"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 // generates format string depending on the string length and padding.
@@ -144,7 +144,7 @@ func printServerCommonMsg(apiEndpoints []string) {
 
 // Prints startup message for Object API access, prints link to our SDK documentation.
 func printObjectAPIMsg() {
-	logger.Startup(color.Blue("\nDocs: ") + "https://docs.min.io")
+	logger.Startup(color.Blue("\nProject: ") + "https://github.com/wrkode/openbucket")
 }
 
 func printLambdaTargets() {

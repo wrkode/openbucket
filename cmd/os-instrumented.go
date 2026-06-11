@@ -24,8 +24,8 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
-	"github.com/minio/minio/internal/disk"
-	ioutilx "github.com/minio/minio/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/disk"
+	ioutilx "github.com/wrkode/openbucket/internal/ioutil"
 )
 
 //go:generate stringer -type=osMetric -trimprefix=osMetric $GOFILE

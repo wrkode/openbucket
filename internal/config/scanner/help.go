@@ -17,7 +17,7 @@
 
 package scanner
 
-import "github.com/minio/minio/internal/config"
+import "github.com/wrkode/openbucket/internal/config"
 
 var (
 	defaultHelpPostfix = func(key string) string {

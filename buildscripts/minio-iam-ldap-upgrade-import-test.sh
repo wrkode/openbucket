@@ -3,7 +3,7 @@
 # This script is used to test the migration of IAM content from old minio
 # instance to new minio instance.
 #
-# To run it locally, start the LDAP server in github.com/minio/minio-iam-testing
+# To run it locally, start the LDAP server in github.com/wrkode/openbucket-iam-testing
 # repo (e.g. make podman-run), and then run this script.
 #
 # This script assumes that LDAP server is at:

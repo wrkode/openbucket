@@ -55,14 +55,14 @@ var (
 	// MinioReleaseURL - release URL.
 	MinioReleaseURL = MinioReleaseBaseURL + minioOSARCH + SlashSeparator
 
-	// MinioStoreName - MinIO store name.
-	MinioStoreName = "MinIO"
+	// MinioStoreName - store name.
+	MinioStoreName = "OpenBucket"
 
-	// MinioUAName - MinIO user agent name.
-	MinioUAName = "MinIO"
+	// MinioUAName - user agent name.
+	MinioUAName = "OpenBucket"
 
-	// MinioBannerName - MinIO banner name for startup message.
-	MinioBannerName = "MinIO Object Storage Server"
+	// MinioBannerName - banner name for startup message.
+	MinioBannerName = "OpenBucket Object Storage Server (community fork of MinIO)"
 
 	// MinioLicense - MinIO server license.
 	MinioLicense = "GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html"

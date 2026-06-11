@@ -18,15 +18,15 @@
 package cmd
 
 import (
-	"github.com/minio/minio/internal/auth"
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/config/compress"
-	xldap "github.com/minio/minio/internal/config/identity/ldap"
-	"github.com/minio/minio/internal/config/identity/openid"
-	"github.com/minio/minio/internal/config/notify"
-	"github.com/minio/minio/internal/config/policy/opa"
-	"github.com/minio/minio/internal/config/storageclass"
-	"github.com/minio/minio/internal/logger"
+	"github.com/wrkode/openbucket/internal/auth"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/config/compress"
+	xldap "github.com/wrkode/openbucket/internal/config/identity/ldap"
+	"github.com/wrkode/openbucket/internal/config/identity/openid"
+	"github.com/wrkode/openbucket/internal/config/notify"
+	"github.com/wrkode/openbucket/internal/config/policy/opa"
+	"github.com/wrkode/openbucket/internal/config/storageclass"
+	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/quick"
 )
 

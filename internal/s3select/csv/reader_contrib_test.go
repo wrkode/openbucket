@@ -27,7 +27,7 @@ import (
 	"testing"
 
 	"github.com/klauspost/compress/zip"
-	"github.com/minio/minio/internal/s3select/sql"
+	"github.com/wrkode/openbucket/internal/s3select/sql"
 )
 
 func TestRead(t *testing.T) {

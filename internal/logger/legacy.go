@@ -18,8 +18,8 @@
 package logger
 
 import (
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/logger/target/http"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/logger/target/http"
 )
 
 // Legacy envs

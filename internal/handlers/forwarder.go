@@ -26,7 +26,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/minio/minio/internal/bpool"
+	"github.com/wrkode/openbucket/internal/bpool"
 )
 
 const defaultFlushInterval = time.Duration(100) * time.Millisecond

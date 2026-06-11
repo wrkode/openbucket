@@ -31,10 +31,10 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/shirou/gopsutil/v3/mem"
 
-	"github.com/minio/minio/internal/config/api"
-	xioutil "github.com/minio/minio/internal/ioutil"
-	"github.com/minio/minio/internal/logger"
-	"github.com/minio/minio/internal/mcontext"
+	"github.com/wrkode/openbucket/internal/config/api"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/mcontext"
 )
 
 type apiConfig struct {

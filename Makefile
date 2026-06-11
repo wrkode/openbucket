@@ -6,8 +6,8 @@ GOOS ?= $(shell go env GOOS)
 GOARCH ?= $(shell go env GOARCH)
 
 VERSION ?= $(shell git describe --tags)
-REPO ?= quay.io/minio
-TAG ?= $(REPO)/minio:$(VERSION)
+REPO ?= ghcr.io/wrkode
+TAG ?= $(REPO)/openbucket:$(VERSION)
 
 GOLANGCI_DIR = .bin/golangci/$(GOLANGCI_VERSION)
 GOLANGCI = $(GOLANGCI_DIR)/golangci-lint
@@ -176,59 +176,28 @@ verify-healing-inconsistent-versions: install-race ## verify resolving inconsist
 build-debugging:
 	@(env bash $(PWD)/docs/debugging/build.sh)
 
-build: checks build-debugging ## builds minio to $(PWD)
-	@echo "Building minio binary to './minio'"
-	@CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build -tags kqueue -trimpath --ldflags "$(LDFLAGS)" -o $(PWD)/minio 1>/dev/null
+build: checks build-debugging ## builds openbucket to $(PWD)
+	@echo "Building openbucket binary to './openbucket'"
+	@CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build -tags kqueue -trimpath --ldflags "$(LDFLAGS)" -o $(PWD)/openbucket 1>/dev/null
 
-hotfix-vars:
-	$(eval LDFLAGS := $(shell MINIO_RELEASE="RELEASE" MINIO_HOTFIX="hotfix.$(shell git rev-parse --short HEAD)" go run buildscripts/gen-ldflags.go $(shell git describe --tags --abbrev=0 | \
-    sed 's#RELEASE\.\([0-9]\+\)-\([0-9]\+\)-\([0-9]\+\)T\([0-9]\+\)-\([0-9]\+\)-\([0-9]\+\)Z#\1-\2-\3T\4:\5:\6Z#')))
-	$(eval VERSION := $(shell git describe --tags --abbrev=0).hotfix.$(shell git rev-parse --short HEAD))
-
-hotfix: hotfix-vars clean install ## builds minio binary with hotfix tags
-	@wget -q -c https://github.com/minio/pkger/releases/download/v2.3.11/pkger_2.3.11_linux_amd64.deb
-	@wget -q -c https://raw.githubusercontent.com/minio/minio-service/v1.1.1/linux-systemd/distributed/minio.service
-	@sudo apt install ./pkger_2.3.11_linux_amd64.deb --yes
-	@mkdir -p minio-release/$(GOOS)-$(GOARCH)/archive
-	@cp -af ./minio minio-release/$(GOOS)-$(GOARCH)/minio
-	@cp -af ./minio minio-release/$(GOOS)-$(GOARCH)/minio.$(VERSION)
-	@minisign -qQSm minio-release/$(GOOS)-$(GOARCH)/minio.$(VERSION) -s "${CRED_DIR}/minisign.key" < "${CRED_DIR}/minisign-passphrase"
-	@sha256sum < minio-release/$(GOOS)-$(GOARCH)/minio.$(VERSION) | sed 's, -,minio.$(VERSION),g' > minio-release/$(GOOS)-$(GOARCH)/minio.$(VERSION).sha256sum
-	@cp -af minio-release/$(GOOS)-$(GOARCH)/minio.$(VERSION)* minio-release/$(GOOS)-$(GOARCH)/archive/
-	@pkger -r $(VERSION) --ignore
-
-hotfix-push: hotfix
-	@scp -q -r minio-release/$(GOOS)-$(GOARCH)/* minio@dl-0.minio.io:~/releases/server/minio/hotfixes/linux-$(GOOS)/
-	@scp -q -r minio-release/$(GOOS)-$(GOARCH)/* minio@dl-0.minio.io:~/releases/server/minio/hotfixes/linux-$(GOOS)/archive
-	@scp -q -r minio-release/$(GOOS)-$(GOARCH)/* minio@dl-1.minio.io:~/releases/server/minio/hotfixes/linux-$(GOOS)/
-	@scp -q -r minio-release/$(GOOS)-$(GOARCH)/* minio@dl-1.minio.io:~/releases/server/minio/hotfixes/linux-$(GOOS)/archive
-	@echo "Published new hotfix binaries at https://dl.min.io/server/minio/hotfixes/linux-$(GOOS)/archive/minio.$(VERSION)"
-
-docker-hotfix-push: docker-hotfix
-	@docker push -q $(TAG) && echo "Published new container $(TAG)"
-
-docker-hotfix: hotfix-push checks ## builds minio docker container with hotfix tags
-	@echo "Building minio docker image '$(TAG)'"
-	@docker build -q --no-cache -t $(TAG) --build-arg RELEASE=$(VERSION) . -f Dockerfile.hotfix
-
-docker: build ## builds minio docker container
-	@echo "Building minio docker image '$(TAG)'"
+docker: build ## builds openbucket docker container
+	@echo "Building openbucket docker image '$(TAG)'"
 	@docker build -q --no-cache -t $(TAG) . -f Dockerfile
 
 test-resiliency: build
 	@echo "Running resiliency tests"
 	@(DOCKER_COMPOSE_FILE=$(PWD)/docs/resiliency/docker-compose.yaml env bash $(PWD)/docs/resiliency/resiliency-tests.sh)
 
-install-race: checks build-debugging ## builds minio to $(PWD)
-	@echo "Building minio binary with -race to './minio'"
-	@GORACE=history_size=7 CGO_ENABLED=1 go build -tags kqueue,dev -race -trimpath --ldflags "$(LDFLAGS)" -o $(PWD)/minio 1>/dev/null
-	@echo "Installing minio binary with -race to '$(GOPATH)/bin/minio'"
-	@mkdir -p $(GOPATH)/bin && cp -af $(PWD)/minio $(GOPATH)/bin/minio
+install-race: checks build-debugging ## builds openbucket to $(PWD)
+	@echo "Building openbucket binary with -race to './openbucket'"
+	@GORACE=history_size=7 CGO_ENABLED=1 go build -tags kqueue,dev -race -trimpath --ldflags "$(LDFLAGS)" -o $(PWD)/openbucket 1>/dev/null
+	@echo "Installing openbucket binary with -race to '$(GOPATH)/bin/openbucket'"
+	@mkdir -p $(GOPATH)/bin && cp -af $(PWD)/openbucket $(GOPATH)/bin/openbucket
 
-install: build ## builds minio and installs it to $GOPATH/bin.
-	@echo "Installing minio binary to '$(GOPATH)/bin/minio'"
-	@mkdir -p $(GOPATH)/bin && cp -af $(PWD)/minio $(GOPATH)/bin/minio
-	@echo "Installation successful. To learn more, try \"minio --help\"."
+install: build ## builds openbucket and installs it to $GOPATH/bin.
+	@echo "Installing openbucket binary to '$(GOPATH)/bin/openbucket'"
+	@mkdir -p $(GOPATH)/bin && cp -af $(PWD)/openbucket $(GOPATH)/bin/openbucket
+	@echo "Installation successful. To learn more, try \"openbucket --help\"."
 
 clean: ## cleanup all generated assets
 	@echo "Cleaning up all the generated files"
@@ -236,7 +205,7 @@ clean: ## cleanup all generated assets
 	@find . -name '*~' | xargs rm -fv
 	@find . -name '.#*#' | xargs rm -fv
 	@find . -name '#*#' | xargs rm -fv
-	@rm -rvf minio
+	@rm -rvf minio openbucket
 	@rm -rvf build
 	@rm -rvf release
 	@rm -rvf .verify*

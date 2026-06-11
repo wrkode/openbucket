@@ -1,4 +1,4 @@
-module github.com/minio/minio/docs/debugging/s3-verify
+module github.com/wrkode/openbucket/docs/debugging/s3-verify
 
 go 1.23.0
 

@@ -31,11 +31,11 @@ import (
 	"time"
 
 	"github.com/minio/minio-go/v7/pkg/signer"
-	"github.com/minio/minio/internal/auth"
-	"github.com/minio/minio/internal/config"
-	"github.com/minio/minio/internal/config/lambda"
-	levent "github.com/minio/minio/internal/config/lambda/event"
-	xhttp "github.com/minio/minio/internal/http"
+	"github.com/wrkode/openbucket/internal/auth"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/config/lambda"
+	levent "github.com/wrkode/openbucket/internal/config/lambda/event"
+	xhttp "github.com/wrkode/openbucket/internal/http"
 )
 
 func TestGetObjectLambdaHandler(t *testing.T) {

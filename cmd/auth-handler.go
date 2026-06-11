@@ -33,14 +33,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/minio/minio/internal/auth"
-	objectlock "github.com/minio/minio/internal/bucket/object/lock"
-	"github.com/minio/minio/internal/etag"
-	"github.com/minio/minio/internal/hash"
-	xhttp "github.com/minio/minio/internal/http"
-	xjwt "github.com/minio/minio/internal/jwt"
-	"github.com/minio/minio/internal/logger"
-	"github.com/minio/minio/internal/mcontext"
+	"github.com/wrkode/openbucket/internal/auth"
+	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
+	"github.com/wrkode/openbucket/internal/etag"
+	"github.com/wrkode/openbucket/internal/hash"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	xjwt "github.com/wrkode/openbucket/internal/jwt"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/mcontext"
 	"github.com/minio/pkg/v3/policy"
 )
 

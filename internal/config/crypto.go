@@ -27,7 +27,7 @@ import (
 	"io"
 
 	jsoniter "github.com/json-iterator/go"
-	"github.com/minio/minio/internal/kms"
+	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/secure-io/sio-go"
 	"github.com/secure-io/sio-go/sioutil"
 )

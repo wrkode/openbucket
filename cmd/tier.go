@@ -33,9 +33,9 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
-	"github.com/minio/minio/internal/crypto"
-	"github.com/minio/minio/internal/hash"
-	"github.com/minio/minio/internal/kms"
+	"github.com/wrkode/openbucket/internal/crypto"
+	"github.com/wrkode/openbucket/internal/hash"
+	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
@@ -441,7 +441,7 @@ func (config *TierConfigMgr) configReader(ctx context.Context) (*PutObjReader, *
 
 	// Note: Local variables with names ek, oek, etc are named inline with
 	// acronyms defined here -
-	// https://github.com/minio/minio/blob/master/docs/security/README.md#acronyms
+	// https://github.com/wrkode/openbucket/blob/master/docs/security/README.md#acronyms
 
 	// Encrypt json encoded tier configurations
 	metadata := make(map[string]string)
