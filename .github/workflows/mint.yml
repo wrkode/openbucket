@@ -16,7 +16,9 @@ permissions:
 
 jobs:
   mint-test:
-    runs-on: mint
+    # upstream ran this on a self-hosted runner labelled "mint";
+    # the fork uses GitHub-hosted runners
+    runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
       - name: cleanup #https://github.com/actions/checkout/issues/273

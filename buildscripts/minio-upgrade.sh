@@ -51,7 +51,15 @@ verify_checksum_mc() {
 add_alias() {
 	for i in $(seq 1 4); do
 		echo "... attempting to add alias $i"
+		retries=60
 		until (mc alias set minio http://127.0.0.1:9000 minioadmin minioadmin); do
+			retries=$((retries - 1))
+			if [ ${retries} -le 0 ]; then
+				echo "server did not become ready in time"
+				docker ps -a
+				MINIO_VERSION=dev /tmp/gopath/bin/docker-compose -f "buildscripts/upgrade-tests/compose.yml" logs --tail 50 || true
+				exit 1
+			fi
 			echo "...waiting... for 5secs" && sleep 5
 		done
 	done

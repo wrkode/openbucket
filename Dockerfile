@@ -20,7 +20,7 @@ FROM alpine:3.21
 # bash and GNU coreutils match the userland of the upstream MinIO images;
 # operational tooling (and our resiliency test suite) execs GNU-style
 # commands and bash syntax inside the container.
-RUN apk add --no-cache ca-certificates bash coreutils && \
+RUN apk add --no-cache ca-certificates bash coreutils curl && \
     ln -sf /bin/bash /bin/sh && \
     mkdir -p /data
 

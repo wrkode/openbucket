@@ -16,7 +16,7 @@ fi
 
 function download_old_release() {
 	if [ ! -f minio.RELEASE.2020-10-28T08-16-50Z ]; then
-		curl --silent -O https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2020-10-28T08-16-50Z
+		curl -fsSL -o minio.RELEASE.2020-10-28T08-16-50Z https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2020-10-28T08-16-50Z
 		chmod a+x minio.RELEASE.2020-10-28T08-16-50Z
 	fi
 }
@@ -46,7 +46,7 @@ function verify_rewrite() {
 	pid=$!
 	disown $pid
 
-	"${WORK_DIR}/mc" ready minio/
+	timeout 5m "${WORK_DIR}/mc" ready minio/
 
 	if ! ps -p ${pid} 1>&2 >/dev/null; then
 		echo "server1 log:"
@@ -79,7 +79,7 @@ function verify_rewrite() {
 	pid=$!
 	disown $pid
 
-	"${WORK_DIR}/mc" ready minio/
+	timeout 5m "${WORK_DIR}/mc" ready minio/
 
 	if ! ps -p ${pid} 1>&2 >/dev/null; then
 		echo "server1 log:"
