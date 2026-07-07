@@ -34,13 +34,13 @@ import (
 	"time"
 
 	jsoniter "github.com/json-iterator/go"
+	"github.com/minio/pkg/v3/console"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	"github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/versioning"
 	"github.com/wrkode/openbucket/internal/color"
 	"github.com/wrkode/openbucket/internal/hash"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/minio/pkg/v3/console"
 )
 
 //go:generate msgp -file $GOFILE -unexported

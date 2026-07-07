@@ -34,11 +34,11 @@ import (
 
 	_ "github.com/lib/pq" // Register postgres driver
 
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 const (

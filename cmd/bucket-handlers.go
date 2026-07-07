@@ -48,6 +48,8 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/set"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/pkg/v3/policy"
+	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/wrkode/openbucket/internal/auth"
 	sse "github.com/wrkode/openbucket/internal/bucket/encryption"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
@@ -62,8 +64,6 @@ import (
 	"github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/policy"
-	"github.com/minio/pkg/v3/sync/errgroup"
 )
 
 const (

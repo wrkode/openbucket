@@ -38,6 +38,9 @@ import (
 	"github.com/klauspost/readahead"
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/pkg/v3/mimedb"
+	"github.com/minio/pkg/v3/sync/errgroup"
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	"github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
@@ -49,9 +52,6 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/mimedb"
-	"github.com/minio/pkg/v3/sync/errgroup"
-	"github.com/minio/sio"
 )
 
 // list all errors which can be ignored in object operations.

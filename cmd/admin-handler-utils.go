@@ -25,9 +25,9 @@ import (
 
 	"github.com/minio/kms-go/kes"
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/config"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // validateAdminReq will validate request against and return whether it is allowed.

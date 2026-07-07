@@ -27,9 +27,9 @@ import (
 	"io"
 	"path"
 
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/hash/sha256"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/sio"
 )
 
 // ObjectKey is a 256 bit secret key used to encrypt the object.

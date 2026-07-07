@@ -28,12 +28,12 @@ import (
 	"path/filepath"
 	"sync"
 
+	xnet "github.com/minio/pkg/v3/net"
+	"github.com/rabbitmq/amqp091-go"
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	xnet "github.com/minio/pkg/v3/net"
-	"github.com/rabbitmq/amqp091-go"
 )
 
 // AMQPArgs - AMQP target arguments.

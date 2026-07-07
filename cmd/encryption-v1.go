@@ -36,6 +36,7 @@ import (
 	"strings"
 
 	"github.com/minio/kms-go/kes"
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/etag"
 	"github.com/wrkode/openbucket/internal/hash"
@@ -43,7 +44,6 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/sio"
 )
 
 var (

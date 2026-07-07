@@ -34,6 +34,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/amztime"
 	sse "github.com/wrkode/openbucket/internal/bucket/encryption"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
@@ -41,7 +42,6 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/s3select"
-	xnet "github.com/minio/pkg/v3/net"
 	"github.com/zeebo/xxh3"
 )
 

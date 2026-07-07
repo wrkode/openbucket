@@ -28,6 +28,7 @@ import (
 	"github.com/wrkode/openbucket/internal/config/browser"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/env"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/api"
 	"github.com/wrkode/openbucket/internal/config/batch"
@@ -52,7 +53,6 @@ import (
 	"github.com/wrkode/openbucket/internal/crypto"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
 )
 
 func initHelp() {

@@ -38,15 +38,15 @@ import (
 	"github.com/minio/minio-go/v7/pkg/s3utils"
 	"github.com/minio/minio-go/v7/pkg/set"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/pkg/v3/sync/errgroup"
+	"github.com/minio/pkg/v3/wildcard"
+	"github.com/minio/pkg/v3/workers"
+	"github.com/puzpuzpuz/xsync/v3"
 	"github.com/wrkode/openbucket/internal/bpool"
 	"github.com/wrkode/openbucket/internal/cachevalue"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/sync/errgroup"
-	"github.com/minio/pkg/v3/wildcard"
-	"github.com/minio/pkg/v3/workers"
-	"github.com/puzpuzpuz/xsync/v3"
 )
 
 type erasureServerPools struct {

@@ -27,10 +27,10 @@ import (
 
 	"github.com/minio/kms-go/kes"
 	"github.com/minio/madmin-go/v3"
-	"github.com/wrkode/openbucket/internal/kms"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/kms"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 const (

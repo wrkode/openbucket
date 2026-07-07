@@ -30,13 +30,13 @@ import (
 	"time"
 
 	"github.com/minio/minio-go/v7/pkg/tags"
-	"github.com/wrkode/openbucket/internal/bucket/versioning"
-	xhttp "github.com/wrkode/openbucket/internal/http"
-	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/minio/pkg/v3/env"
 	"github.com/minio/pkg/v3/wildcard"
 	"github.com/minio/pkg/v3/workers"
 	"github.com/minio/pkg/v3/xtime"
+	"github.com/wrkode/openbucket/internal/bucket/versioning"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"gopkg.in/yaml.v3"
 )
 

@@ -34,8 +34,8 @@ import (
 	"github.com/wrkode/openbucket/internal/amztime"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/env"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 const (

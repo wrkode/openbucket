@@ -38,13 +38,13 @@ import (
 	"github.com/klauspost/compress/zstd"
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/madmin-go/v3/logger/log"
+	"github.com/minio/mux"
 	"github.com/wrkode/openbucket/internal/bucket/bandwidth"
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/grid"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/pubsub"
-	"github.com/minio/mux"
 )
 
 // To abstract a node over network.

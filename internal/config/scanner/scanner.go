@@ -22,8 +22,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/config"
 	"github.com/minio/pkg/v3/env"
+	"github.com/wrkode/openbucket/internal/config"
 )
 
 // Compression environment variables

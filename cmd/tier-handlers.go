@@ -25,9 +25,9 @@ import (
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/minio/madmin-go/v3"
-	"github.com/wrkode/openbucket/internal/config/storageclass"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/config/storageclass"
 )
 
 var (

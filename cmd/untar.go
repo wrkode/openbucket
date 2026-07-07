@@ -36,8 +36,8 @@ import (
 	"github.com/klauspost/compress/s2"
 	"github.com/klauspost/compress/zstd"
 	gzip "github.com/klauspost/pgzip"
-	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/pierrec/lz4/v4"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 )
 
 // Max bzip2 concurrency across calls. 50% of GOMAXPROCS.

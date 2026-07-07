@@ -43,12 +43,12 @@ import (
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
 
+	"github.com/minio/pkg/v3/policy"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/versioning"
 	levent "github.com/wrkode/openbucket/internal/config/lambda/event"
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/hash"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // APIError structure

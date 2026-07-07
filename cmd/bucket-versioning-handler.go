@@ -25,10 +25,10 @@ import (
 
 	humanize "github.com/dustin/go-humanize"
 	"github.com/minio/madmin-go/v3"
-	"github.com/wrkode/openbucket/internal/bucket/versioning"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/bucket/versioning"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 const (

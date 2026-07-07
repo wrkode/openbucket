@@ -34,11 +34,11 @@ import (
 	"github.com/IBM/sarama"
 	saramatls "github.com/IBM/sarama/tools/tls"
 
+	xnet "github.com/minio/pkg/v3/net"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	types "github.com/wrkode/openbucket/internal/logger/target/loggertypes"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 // the suffix for the configured queue dir where the logs will be persisted.

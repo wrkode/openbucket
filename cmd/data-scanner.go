@@ -35,6 +35,7 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/console"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	"github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
@@ -42,7 +43,6 @@ import (
 	"github.com/wrkode/openbucket/internal/config/heal"
 	"github.com/wrkode/openbucket/internal/event"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/minio/pkg/v3/console"
 	uatomic "go.uber.org/atomic"
 )
 

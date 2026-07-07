@@ -1,0 +1,10 @@
+# Vulnerability IDs acknowledged as not applicable to OpenBucket.
+# Each entry must include a rationale and should be re-reviewed when
+# the affected dependency is next bumped.
+#
+# GO-2026-5662: Stored XSS in Prometheus' own web UI (tooltips and the
+# metrics explorer). No fixed version exists upstream. OpenBucket imports
+# github.com/prometheus/prometheus only for histogram/model types used by
+# the metrics endpoints and does not embed or serve the Prometheus web UI,
+# so the vulnerable code paths are not exposed.
+GO-2026-5662

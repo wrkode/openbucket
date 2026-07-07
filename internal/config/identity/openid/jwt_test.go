@@ -31,10 +31,10 @@ import (
 	"time"
 
 	jwtgo "github.com/golang-jwt/jwt/v4"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/arn"
 	"github.com/wrkode/openbucket/internal/config"
 	jwtm "github.com/wrkode/openbucket/internal/jwt"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 func TestUpdateClaimsExpiry(t *testing.T) {

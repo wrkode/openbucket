@@ -29,12 +29,12 @@ import (
 	"time"
 
 	"github.com/minio/minio-go/v7"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // PutBucketReplicationConfigHandler - PUT Bucket replication configuration.

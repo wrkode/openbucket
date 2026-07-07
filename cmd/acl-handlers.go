@@ -22,10 +22,10 @@ import (
 	"io"
 	"net/http"
 
-	xhttp "github.com/wrkode/openbucket/internal/http"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/policy"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 // Data types used for returning dummy access control

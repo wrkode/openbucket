@@ -22,10 +22,10 @@ import (
 	"io"
 
 	csv "github.com/minio/csvparser"
+	"github.com/minio/simdjson-go"
 	"github.com/wrkode/openbucket/internal/s3select/json"
 	"github.com/wrkode/openbucket/internal/s3select/jstream"
 	"github.com/wrkode/openbucket/internal/s3select/sql"
-	"github.com/minio/simdjson-go"
 )
 
 // Record - is JSON record.

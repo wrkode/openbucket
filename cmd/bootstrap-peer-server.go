@@ -32,9 +32,9 @@ import (
 	"time"
 
 	"github.com/minio/minio-go/v7/pkg/set"
+	"github.com/minio/pkg/v3/env"
 	"github.com/wrkode/openbucket/internal/grid"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
 )
 
 // To abstract a node over network.

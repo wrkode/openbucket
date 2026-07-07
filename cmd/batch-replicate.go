@@ -21,8 +21,8 @@ import (
 	"time"
 
 	miniogo "github.com/minio/minio-go/v7"
-	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/minio/pkg/v3/xtime"
+	"github.com/wrkode/openbucket/internal/auth"
 )
 
 //go:generate msgp -file $GOFILE

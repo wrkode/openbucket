@@ -32,6 +32,8 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/lithammer/shortuuid/v4"
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/env"
+	"github.com/minio/pkg/v3/workers"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
@@ -39,8 +41,6 @@ import (
 	"github.com/wrkode/openbucket/internal/hash"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
-	"github.com/minio/pkg/v3/workers"
 )
 
 //go:generate msgp -file $GOFILE -unexported

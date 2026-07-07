@@ -28,12 +28,12 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/minio/pkg/v3/policy"
+	"github.com/minio/zipindex"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/crypto"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/minio/pkg/v3/policy"
-	"github.com/minio/zipindex"
 )
 
 const (

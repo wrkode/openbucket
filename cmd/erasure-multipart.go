@@ -33,15 +33,15 @@ import (
 
 	"github.com/klauspost/readahead"
 	"github.com/minio/minio-go/v7/pkg/set"
+	"github.com/minio/pkg/v3/mimedb"
+	"github.com/minio/pkg/v3/sync/errgroup"
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/hash"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/mimedb"
-	"github.com/minio/pkg/v3/sync/errgroup"
-	"github.com/minio/sio"
 )
 
 func (er erasureObjects) getUploadIDDir(bucket, object, uploadID string) string {

@@ -27,10 +27,10 @@ import (
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/klauspost/compress/s2"
-	"github.com/wrkode/openbucket/internal/bpool"
-	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/tinylib/msgp/msgp"
 	"github.com/valyala/bytebufferpool"
+	"github.com/wrkode/openbucket/internal/bpool"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 )
 
 // metadata stream format:

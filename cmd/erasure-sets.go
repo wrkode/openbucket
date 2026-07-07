@@ -35,11 +35,11 @@ import (
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
 	"github.com/minio/minio-go/v7/pkg/tags"
-	"github.com/wrkode/openbucket/internal/dsync"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/console"
 	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/puzpuzpuz/xsync/v3"
+	"github.com/wrkode/openbucket/internal/dsync"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 // setsDsyncLockers is encapsulated type for Close()

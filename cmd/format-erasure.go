@@ -27,12 +27,12 @@ import (
 	"sync"
 
 	"github.com/dustin/go-humanize"
+	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/wrkode/openbucket/internal/color"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/sync/errgroup"
 )
 
 const (

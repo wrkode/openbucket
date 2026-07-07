@@ -29,11 +29,11 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	miniogopolicy "github.com/minio/minio-go/v7/pkg/policy"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/handlers"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // PolicySys - policy subsystem.

@@ -28,13 +28,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/minio/pkg/v3/env"
+	xnet "github.com/minio/pkg/v3/net"
+	"github.com/rabbitmq/amqp091-go"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/event/target"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
-	xnet "github.com/minio/pkg/v3/net"
-	"github.com/rabbitmq/amqp091-go"
 )
 
 const (

@@ -28,12 +28,12 @@ import (
 
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/wrkode/openbucket/internal/config"
-	cfgldap "github.com/wrkode/openbucket/internal/config/identity/ldap"
-	"github.com/wrkode/openbucket/internal/config/identity/openid"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/ldap"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/config"
+	cfgldap "github.com/wrkode/openbucket/internal/config/identity/ldap"
+	"github.com/wrkode/openbucket/internal/config/identity/openid"
 )
 
 func addOrUpdateIDPHandler(ctx context.Context, w http.ResponseWriter, r *http.Request, isUpdate bool) {

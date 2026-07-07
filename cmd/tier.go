@@ -33,10 +33,10 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/hash"
 	"github.com/wrkode/openbucket/internal/kms"
-	"github.com/prometheus/client_golang/prometheus"
 )
 
 //go:generate msgp -file $GOFILE

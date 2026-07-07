@@ -18,6 +18,7 @@
 package cmd
 
 import (
+	"github.com/minio/pkg/v3/quick"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/compress"
@@ -27,7 +28,6 @@ import (
 	"github.com/wrkode/openbucket/internal/config/policy/opa"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/quick"
 )
 
 // FileLogger is introduced to workaround the dependency about logrus

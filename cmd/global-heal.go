@@ -28,6 +28,9 @@ import (
 
 	"github.com/dustin/go-humanize"
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/console"
+	"github.com/minio/pkg/v3/wildcard"
+	"github.com/minio/pkg/v3/workers"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
@@ -35,9 +38,6 @@ import (
 	"github.com/wrkode/openbucket/internal/color"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/console"
-	"github.com/minio/pkg/v3/wildcard"
-	"github.com/minio/pkg/v3/workers"
 )
 
 const (

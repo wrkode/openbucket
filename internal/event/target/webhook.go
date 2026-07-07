@@ -33,13 +33,13 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/minio/pkg/v3/certs"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/event"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	"github.com/minio/pkg/v3/certs"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 // Webhook constants

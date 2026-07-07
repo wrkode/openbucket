@@ -24,10 +24,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/config"
-	xhttp "github.com/wrkode/openbucket/internal/http"
 	xnet "github.com/minio/pkg/v3/net"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/config"
+	xhttp "github.com/wrkode/openbucket/internal/http"
 )
 
 // Authorization Plugin config and env variables

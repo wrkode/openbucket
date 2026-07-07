@@ -34,10 +34,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	xnet "github.com/minio/pkg/v3/net"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/mcontext"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 const logSubsys = "internodes"

@@ -32,6 +32,9 @@ import (
 	"github.com/klauspost/compress/s2"
 	"github.com/klauspost/compress/zstd"
 	gzip "github.com/klauspost/pgzip"
+	"github.com/minio/pkg/v3/env"
+	"github.com/minio/simdjson-go"
+	"github.com/pierrec/lz4/v4"
 	"github.com/wrkode/openbucket/internal/bpool"
 	"github.com/wrkode/openbucket/internal/config"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
@@ -40,9 +43,6 @@ import (
 	"github.com/wrkode/openbucket/internal/s3select/parquet"
 	"github.com/wrkode/openbucket/internal/s3select/simdj"
 	"github.com/wrkode/openbucket/internal/s3select/sql"
-	"github.com/minio/pkg/v3/env"
-	"github.com/minio/simdjson-go"
-	"github.com/pierrec/lz4/v4"
 )
 
 type recordReader interface {

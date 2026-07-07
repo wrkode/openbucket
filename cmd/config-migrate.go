@@ -24,6 +24,8 @@ import (
 	"path"
 	"strings"
 
+	xnet "github.com/minio/pkg/v3/net"
+	"github.com/minio/pkg/v3/quick"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/compress"
 	xldap "github.com/wrkode/openbucket/internal/config/identity/ldap"
@@ -33,8 +35,6 @@ import (
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	"github.com/wrkode/openbucket/internal/event/target"
 	"github.com/wrkode/openbucket/internal/logger"
-	xnet "github.com/minio/pkg/v3/net"
-	"github.com/minio/pkg/v3/quick"
 )
 
 // Save config file to corresponding backend

@@ -29,14 +29,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/minio/pkg/v3/policy"
+	xxml "github.com/minio/xxml"
 	"github.com/wrkode/openbucket/internal/amztime"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/handlers"
 	"github.com/wrkode/openbucket/internal/hash"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/policy"
-	xxml "github.com/minio/xxml"
 )
 
 const (

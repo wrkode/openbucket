@@ -66,6 +66,15 @@ add_alias() {
 
 	echo "Sleeping for nginx"
 	sleep 20
+
+	# the alias responding does not mean the distributed cluster is ready;
+	# gate on cluster readiness before any data verification reads
+	timeout 5m mc ready minio || {
+		echo "cluster did not become ready in time"
+		docker ps -a
+		MINIO_VERSION=dev /tmp/gopath/bin/docker-compose -f "buildscripts/upgrade-tests/compose.yml" logs --tail 50 || true
+		exit 1
+	}
 }
 
 __init__() {

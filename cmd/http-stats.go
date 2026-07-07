@@ -23,8 +23,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/prometheus/client_golang/prometheus"
+	xhttp "github.com/wrkode/openbucket/internal/http"
 )
 
 // connStats - Network statistics

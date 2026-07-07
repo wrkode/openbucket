@@ -60,13 +60,13 @@ import (
 
 	"github.com/minio/minio-go/v7/pkg/s3utils"
 	"github.com/minio/minio-go/v7/pkg/signer"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/hash"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // TestMain to set up global env.

@@ -28,10 +28,10 @@ import (
 	"time"
 
 	jwtgo "github.com/golang-jwt/jwt/v4"
-	"github.com/wrkode/openbucket/internal/arn"
-	"github.com/wrkode/openbucket/internal/auth"
 	xnet "github.com/minio/pkg/v3/net"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/arn"
+	"github.com/wrkode/openbucket/internal/auth"
 )
 
 type publicKeys struct {

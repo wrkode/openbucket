@@ -24,8 +24,8 @@ import (
 	"math"
 	"strings"
 
-	"github.com/wrkode/openbucket/internal/s3select/jstream"
 	"github.com/minio/simdjson-go"
+	"github.com/wrkode/openbucket/internal/s3select/jstream"
 )
 
 var (

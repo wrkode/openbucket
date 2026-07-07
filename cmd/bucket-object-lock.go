@@ -23,12 +23,12 @@ import (
 	"math"
 	"net/http"
 
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // BucketObjectLockSys - map of bucket and retention configuration.

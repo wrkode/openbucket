@@ -24,11 +24,11 @@ import (
 	"fmt"
 	"net/http"
 
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/arn"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/identity/openid/provider"
 	xhttp "github.com/wrkode/openbucket/internal/http"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 type providerCfg struct {

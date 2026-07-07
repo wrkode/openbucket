@@ -23,10 +23,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/config"
-	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/minio/pkg/v3/env"
 	xnet "github.com/minio/pkg/v3/net"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/crypto"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/namespace"
 	"go.uber.org/zap"

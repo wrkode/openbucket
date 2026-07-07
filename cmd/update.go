@@ -36,13 +36,13 @@ import (
 	"time"
 
 	"github.com/klauspost/compress/zstd"
-	xhttp "github.com/wrkode/openbucket/internal/http"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/env"
 	xnet "github.com/minio/pkg/v3/net"
 	"github.com/minio/selfupdate"
 	gopsutilcpu "github.com/shirou/gopsutil/v3/cpu"
 	"github.com/valyala/bytebufferpool"
+	xhttp "github.com/wrkode/openbucket/internal/http"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 const (
@@ -436,16 +436,6 @@ func getUpdateTransport(timeout time.Duration) http.RoundTripper {
 		DisableCompression: true,
 	}
 	return updateTransport
-}
-
-func getLatestReleaseTime(u *url.URL, timeout time.Duration, mode string) (sha256Sum []byte, releaseTime time.Time, err error) {
-	data, err := downloadReleaseURL(u, timeout, mode)
-	if err != nil {
-		return sha256Sum, releaseTime, err
-	}
-
-	sha256Sum, releaseTime, _, err = parseReleaseData(data)
-	return sha256Sum, releaseTime, err
 }
 
 const (

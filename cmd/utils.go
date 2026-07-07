@@ -49,6 +49,10 @@ import (
 	xaudit "github.com/minio/madmin-go/v3/logger/audit"
 	"github.com/minio/minio-go/v7"
 	miniogopolicy "github.com/minio/minio-go/v7/pkg/policy"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/certs"
+	"github.com/minio/pkg/v3/env"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/api"
 	xtls "github.com/wrkode/openbucket/internal/config/identity/tls"
@@ -61,10 +65,6 @@ import (
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/logger/message/audit"
 	"github.com/wrkode/openbucket/internal/rest"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/certs"
-	"github.com/minio/pkg/v3/env"
-	xnet "github.com/minio/pkg/v3/net"
 	"golang.org/x/oauth2"
 )
 

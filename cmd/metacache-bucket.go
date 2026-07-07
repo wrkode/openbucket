@@ -26,8 +26,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/console"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 // a bucketMetacache keeps track of all caches generated

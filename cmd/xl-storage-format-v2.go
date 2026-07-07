@@ -31,12 +31,12 @@ import (
 	"github.com/cespare/xxhash/v2"
 	"github.com/google/uuid"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/tinylib/msgp/msgp"
 	"github.com/wrkode/openbucket/internal/bpool"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	xhttp "github.com/wrkode/openbucket/internal/http"
-	"github.com/tinylib/msgp/msgp"
 )
 
 var (

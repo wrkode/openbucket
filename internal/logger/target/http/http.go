@@ -33,13 +33,13 @@ import (
 	"time"
 
 	jsoniter "github.com/json-iterator/go"
+	xnet "github.com/minio/pkg/v3/net"
+	"github.com/valyala/bytebufferpool"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	types "github.com/wrkode/openbucket/internal/logger/target/loggertypes"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	xnet "github.com/minio/pkg/v3/net"
-	"github.com/valyala/bytebufferpool"
 )
 
 const (
