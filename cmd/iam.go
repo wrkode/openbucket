@@ -35,6 +35,9 @@ import (
 
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
+	"github.com/minio/pkg/v3/env"
+	"github.com/minio/pkg/v3/ldap"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/arn"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/color"
@@ -48,9 +51,6 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/jwt"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
-	"github.com/minio/pkg/v3/ldap"
-	"github.com/minio/pkg/v3/policy"
 	etcd "go.etcd.io/etcd/client/v3"
 	"golang.org/x/sync/singleflight"
 )

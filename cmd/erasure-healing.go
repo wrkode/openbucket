@@ -29,10 +29,10 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
-	"github.com/wrkode/openbucket/internal/grid"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/puzpuzpuz/xsync/v3"
+	"github.com/wrkode/openbucket/internal/grid"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 //go:generate stringer -type=healingMetric -trimprefix=healingMetric $GOFILE

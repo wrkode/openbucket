@@ -117,9 +117,9 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/hash/sha256"
 	xhttp "github.com/wrkode/openbucket/internal/http"
-	"github.com/minio/sio"
 )
 
 // ETag is a single S3 ETag.

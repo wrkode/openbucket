@@ -32,7 +32,7 @@ fi
 set +e
 
 export MC_HOST_minioadm=http://minioadmin:minioadmin@localhost:9100/
-./mc ready minioadm
+timeout 5m ./mc ready minioadm
 
 ./mc ls minioadm/
 
@@ -57,7 +57,7 @@ done
 
 set +e
 
-./mc ready minioadm/
+timeout 5m ./mc ready minioadm/
 
 ./mc ls minioadm/
 if [ $? -ne 0 ]; then
@@ -85,8 +85,8 @@ minio server --address 127.0.0.1:9004 "http://127.0.0.1:9003/tmp/multisiteb/data
 export MC_HOST_sitea=http://minioadmin:minioadmin@127.0.0.1:9001
 export MC_HOST_siteb=http://minioadmin:minioadmin@127.0.0.1:9004
 
-./mc ready sitea
-./mc ready siteb
+timeout 5m ./mc ready sitea
+timeout 5m ./mc ready siteb
 
 ./mc admin replicate add sitea siteb
 
@@ -114,8 +114,8 @@ minio server --address 127.0.0.1:9004 "http://127.0.0.1:9003/tmp/multisiteb/data
 export MC_HOST_sitea=http://foobar:foo12345@127.0.0.1:9001
 export MC_HOST_siteb=http://foobar:foo12345@127.0.0.1:9004
 
-./mc ready sitea
-./mc ready siteb
+timeout 5m ./mc ready sitea
+timeout 5m ./mc ready siteb
 
 ./mc admin user add sitea foobar-admin foo12345
 

@@ -47,10 +47,10 @@ import (
 	"github.com/wrkode/openbucket/internal/cachevalue"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 
+	"github.com/pkg/xattr"
 	"github.com/wrkode/openbucket/internal/disk"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/pkg/xattr"
 )
 
 const (

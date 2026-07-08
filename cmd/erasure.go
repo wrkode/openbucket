@@ -30,9 +30,9 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/wrkode/openbucket/internal/dsync"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/minio/pkg/v3/sync/errgroup"
 )
 
 // list all errors that can be ignore in a bucket operation.

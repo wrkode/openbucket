@@ -25,9 +25,9 @@ import (
 
 	jwtgo "github.com/golang-jwt/jwt/v4"
 	jwtreq "github.com/golang-jwt/jwt/v4/request"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	xjwt "github.com/wrkode/openbucket/internal/jwt"
-	"github.com/minio/pkg/v3/policy"
 )
 
 const (

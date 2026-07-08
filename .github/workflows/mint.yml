@@ -1,9 +1,12 @@
 name: Mint Tests
 
+# The full mint suite exceeds what GitHub-hosted runners can finish in a
+# PR-feedback window (upstream ran it on beefy self-hosted runners), so it
+# runs on a weekly schedule and on demand instead of blocking every PR.
 on:
-  pull_request:
-    branches:
-      - master
+  schedule:
+    - cron: "0 4 * * 1" # Mondays 04:00 UTC
+  workflow_dispatch:
 
 # This ensures that previous jobs for the PR are canceled when the PR is
 # updated.
@@ -16,7 +19,9 @@ permissions:
 
 jobs:
   mint-test:
-    runs-on: mint
+    # upstream ran this on a self-hosted runner labelled "mint";
+    # the fork uses GitHub-hosted runners
+    runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
       - name: cleanup #https://github.com/actions/checkout/issues/273

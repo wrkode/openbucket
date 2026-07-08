@@ -31,12 +31,12 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/bucket/bandwidth"
 	"github.com/wrkode/openbucket/internal/grid"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/rest"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 // client to talk to peer Nodes.

@@ -23,8 +23,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/bucket/replication"
 	"github.com/rcrowley/go-metrics"
+	"github.com/wrkode/openbucket/internal/bucket/replication"
 )
 
 func (b *BucketReplicationStats) hasReplicationUsage() bool {

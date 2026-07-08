@@ -26,9 +26,9 @@ import (
 	"sync"
 
 	"github.com/dustin/go-humanize"
+	"github.com/minio/pkg/v3/env"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
 )
 
 // Standard constants for all storage class

@@ -27,8 +27,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/auth"
 )
 
 type nullReader struct{}

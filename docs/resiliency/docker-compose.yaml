@@ -10,7 +10,8 @@ x-minio-common: &minio-common
   environment:
     MINIO_CI_CD: 1
   healthcheck:
-    test: ["CMD", "mc", "ready", "local"]
+    # the image does not bundle mc; probe the health endpoint directly
+    test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
     interval: 5s
     timeout: 5s
     retries: 5

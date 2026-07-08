@@ -24,9 +24,9 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/sio"
 )
 
 const (

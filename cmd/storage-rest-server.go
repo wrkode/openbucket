@@ -34,19 +34,19 @@ import (
 	"sync"
 	"time"
 
+	"github.com/tinylib/msgp/msgp"
 	"github.com/wrkode/openbucket/internal/bpool"
 	"github.com/wrkode/openbucket/internal/grid"
-	"github.com/tinylib/msgp/msgp"
 
 	jwtreq "github.com/golang-jwt/jwt/v4/request"
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/mux"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/config"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	xjwt "github.com/wrkode/openbucket/internal/jwt"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/mux"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 var errDiskStale = errors.New("drive stale")

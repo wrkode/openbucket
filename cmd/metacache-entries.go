@@ -25,8 +25,8 @@ import (
 	"sort"
 	"strings"
 
-	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/minio/pkg/v3/console"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 )
 
 // metaCacheEntry is an object or a directory within an unknown bucket.

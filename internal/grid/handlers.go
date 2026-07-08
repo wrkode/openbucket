@@ -24,10 +24,10 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/tinylib/msgp/msgp"
 	"github.com/wrkode/openbucket/internal/bpool"
 	"github.com/wrkode/openbucket/internal/hash/sha256"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/tinylib/msgp/msgp"
 )
 
 //go:generate stringer -type=HandlerID -output=handlers_string.go -trimprefix=Handler msg.go $GOFILE

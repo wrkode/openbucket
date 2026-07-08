@@ -21,8 +21,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/config"
 	"github.com/minio/pkg/v3/env"
+	"github.com/wrkode/openbucket/internal/config"
 )
 
 // Drive specific timeout environment variables

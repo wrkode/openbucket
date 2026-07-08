@@ -23,12 +23,12 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/minio/pkg/v3/env"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/lambda/event"
 	"github.com/wrkode/openbucket/internal/config/lambda/target"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/env"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 const (

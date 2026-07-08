@@ -20,8 +20,8 @@ package cmd
 import (
 	"net/http"
 
-	"github.com/wrkode/openbucket/internal/grid"
 	"github.com/minio/mux"
+	"github.com/wrkode/openbucket/internal/grid"
 )
 
 // Composed function registering routers for only distributed Erasure setup.

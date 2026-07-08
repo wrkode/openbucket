@@ -29,6 +29,8 @@ import (
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/pkg/v3/policy"
+	"github.com/minio/pkg/v3/sync/errgroup"
 	bucketsse "github.com/wrkode/openbucket/internal/bucket/encryption"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
@@ -37,8 +39,6 @@ import (
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/policy"
-	"github.com/minio/pkg/v3/sync/errgroup"
 	"golang.org/x/sync/singleflight"
 )
 

@@ -28,9 +28,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/minio/pkg/v3/policy"
 	"github.com/minio/pkg/v3/policy/condition"
+	"github.com/wrkode/openbucket/internal/auth"
 )
 
 func getAnonReadOnlyBucketPolicy(bucketName string) *policy.BucketPolicy {

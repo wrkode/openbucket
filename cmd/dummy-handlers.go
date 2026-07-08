@@ -20,9 +20,9 @@ package cmd
 import (
 	"net/http"
 
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 // Data types used for returning dummy tagging XML.

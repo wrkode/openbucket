@@ -27,9 +27,9 @@ import (
 	"io"
 
 	jsoniter "github.com/json-iterator/go"
-	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/secure-io/sio-go"
 	"github.com/secure-io/sio-go/sioutil"
+	"github.com/wrkode/openbucket/internal/kms"
 )
 
 // EncryptBytes encrypts the plaintext with a key managed by KMS.

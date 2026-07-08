@@ -30,8 +30,8 @@ import (
 
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/minio/pkg/v3/env"
+	"github.com/wrkode/openbucket/internal/auth"
 )
 
 // ErrorConfig holds the config error types

@@ -3,8 +3,8 @@
 package cmd
 
 import (
-	"github.com/wrkode/openbucket/internal/bucket/replication"
 	"github.com/tinylib/msgp/msgp"
+	"github.com/wrkode/openbucket/internal/bucket/replication"
 )
 
 // DecodeMsg implements msgp.Decodable

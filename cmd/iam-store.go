@@ -33,14 +33,14 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/wrkode/openbucket/internal/auth"
-	"github.com/wrkode/openbucket/internal/config"
-	"github.com/wrkode/openbucket/internal/config/identity/openid"
-	"github.com/wrkode/openbucket/internal/jwt"
 	"github.com/minio/pkg/v3/env"
 	"github.com/minio/pkg/v3/policy"
 	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/puzpuzpuz/xsync/v3"
+	"github.com/wrkode/openbucket/internal/auth"
+	"github.com/wrkode/openbucket/internal/config"
+	"github.com/wrkode/openbucket/internal/config/identity/openid"
+	"github.com/wrkode/openbucket/internal/jwt"
 	"golang.org/x/sync/singleflight"
 )
 

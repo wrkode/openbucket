@@ -33,13 +33,13 @@ import (
 
 	elasticsearch7 "github.com/elastic/go-elasticsearch/v7"
 	"github.com/minio/highwayhash"
+	xnet "github.com/minio/pkg/v3/net"
+	"github.com/pkg/errors"
 	"github.com/wrkode/openbucket/internal/event"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	xnet "github.com/minio/pkg/v3/net"
-	"github.com/pkg/errors"
 )
 
 // Elastic constants

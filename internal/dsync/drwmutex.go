@@ -27,10 +27,10 @@ import (
 	"sync"
 	"time"
 
-	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/wrkode/openbucket/internal/mcontext"
 	"github.com/minio/pkg/v3/console"
 	"github.com/minio/pkg/v3/env"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/mcontext"
 )
 
 // Indicator if logging is enabled.

@@ -31,12 +31,12 @@ import (
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/sync/errgroup"
+	"github.com/puzpuzpuz/xsync/v3"
 	"github.com/wrkode/openbucket/internal/config"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/sync/errgroup"
-	"github.com/puzpuzpuz/xsync/v3"
 )
 
 // IAMObjectStore implements IAMStorageAPI
@@ -576,7 +576,7 @@ func (iamOS *IAMObjectStore) loadAllFromObjStore(ctx context.Context, cache *iam
 	if took := time.Since(listStartTime); took > maxIAMLoadOpTime {
 		var s strings.Builder
 		for k, v := range listedConfigItems {
-			s.WriteString(fmt.Sprintf("    %s: %d items\n", k, len(v)))
+			fmt.Fprintf(&s, "    %s: %d items\n", k, len(v))
 		}
 		logger.Info("listAllIAMConfigItems took %.2fs with contents:\n%s", took.Seconds(), s.String())
 	}

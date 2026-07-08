@@ -23,10 +23,10 @@ import (
 	"net/http"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // KMSStatusHandler - GET /minio/kms/v1/status

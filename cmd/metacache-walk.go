@@ -24,9 +24,9 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/valyala/bytebufferpool"
 	"github.com/wrkode/openbucket/internal/grid"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/valyala/bytebufferpool"
 )
 
 //go:generate msgp -file $GOFILE

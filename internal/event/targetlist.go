@@ -25,9 +25,9 @@ import (
 	"sync"
 	"sync/atomic"
 
+	"github.com/minio/pkg/v3/workers"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/store"
-	"github.com/minio/pkg/v3/workers"
 )
 
 const (

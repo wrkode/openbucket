@@ -21,9 +21,9 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/minio/pkg/v3/env"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/config"
-	"github.com/minio/pkg/v3/env"
 )
 
 const (

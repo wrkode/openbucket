@@ -34,6 +34,9 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/encrypt"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
+	"github.com/minio/sio"
 	"github.com/wrkode/openbucket/internal/amztime"
 	sse "github.com/wrkode/openbucket/internal/bucket/encryption"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
@@ -48,9 +51,6 @@ import (
 	"github.com/wrkode/openbucket/internal/hash/sha256"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
-	"github.com/minio/sio"
 )
 
 // Multipart objectAPIHandlers

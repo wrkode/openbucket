@@ -25,13 +25,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/minio/pkg/v3/sync/errgroup"
 	"github.com/wrkode/openbucket/internal/amztime"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	"github.com/wrkode/openbucket/internal/bucket/replication"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/hash/sha256"
 	xhttp "github.com/wrkode/openbucket/internal/http"
-	"github.com/minio/pkg/v3/sync/errgroup"
 )
 
 // Object was stored with additional erasure codes due to degraded system at upload time

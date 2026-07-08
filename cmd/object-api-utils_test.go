@@ -33,10 +33,10 @@ import (
 	"testing"
 
 	"github.com/klauspost/compress/s2"
+	"github.com/minio/pkg/v3/trie"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/config/compress"
 	"github.com/wrkode/openbucket/internal/crypto"
-	"github.com/minio/pkg/v3/trie"
 )
 
 func pathJoinOld(elem ...string) string {

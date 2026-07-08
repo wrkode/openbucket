@@ -41,6 +41,9 @@ import (
 	"github.com/klauspost/compress/s2"
 	"github.com/klauspost/readahead"
 	"github.com/minio/minio-go/v7/pkg/s3utils"
+	"github.com/minio/pkg/v3/trie"
+	"github.com/minio/pkg/v3/wildcard"
+	"github.com/valyala/bytebufferpool"
 	"github.com/wrkode/openbucket/internal/config/compress"
 	"github.com/wrkode/openbucket/internal/config/dns"
 	"github.com/wrkode/openbucket/internal/config/storageclass"
@@ -49,9 +52,6 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/trie"
-	"github.com/minio/pkg/v3/wildcard"
-	"github.com/valyala/bytebufferpool"
 )
 
 const (

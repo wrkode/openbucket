@@ -38,12 +38,12 @@ import (
 	"github.com/gobwas/ws/wsutil"
 	"github.com/google/uuid"
 	"github.com/minio/madmin-go/v3"
-	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/wrkode/openbucket/internal/pubsub"
 	xnet "github.com/minio/pkg/v3/net"
 	"github.com/puzpuzpuz/xsync/v3"
 	"github.com/tinylib/msgp/msgp"
+	xioutil "github.com/wrkode/openbucket/internal/ioutil"
+	"github.com/wrkode/openbucket/internal/logger"
+	"github.com/wrkode/openbucket/internal/pubsub"
 	"github.com/zeebo/xxh3"
 )
 

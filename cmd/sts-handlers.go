@@ -32,14 +32,14 @@ import (
 	"time"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
+	"github.com/minio/pkg/v3/wildcard"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/config/identity/openid"
 	"github.com/wrkode/openbucket/internal/hash/sha256"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
-	"github.com/minio/pkg/v3/wildcard"
 )
 
 const (

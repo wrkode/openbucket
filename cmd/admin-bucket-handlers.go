@@ -34,14 +34,14 @@ import (
 	"github.com/minio/kms-go/kes"
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/bucket/versioning"
 	"github.com/wrkode/openbucket/internal/event"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/kms"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
 )
 
 const (

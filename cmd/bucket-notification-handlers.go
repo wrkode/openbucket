@@ -23,10 +23,10 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/wrkode/openbucket/internal/event"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/mux"
 	"github.com/minio/pkg/v3/policy"
+	"github.com/wrkode/openbucket/internal/event"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 const (

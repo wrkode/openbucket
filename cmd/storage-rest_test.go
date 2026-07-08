@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/wrkode/openbucket/internal/grid"
 	xnet "github.com/minio/pkg/v3/net"
+	"github.com/wrkode/openbucket/internal/grid"
 )
 
 // Storage REST server, storageRESTReceiver and StorageRESTClient are

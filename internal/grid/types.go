@@ -27,8 +27,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/wrkode/openbucket/internal/bpool"
 	"github.com/tinylib/msgp/msgp"
+	"github.com/wrkode/openbucket/internal/bpool"
 )
 
 // Recycler will override the internal reuse in typed handlers.

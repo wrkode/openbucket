@@ -26,9 +26,9 @@ import (
 	"strings"
 
 	"github.com/minio/minio-go/v7/pkg/set"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/logger"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 var (

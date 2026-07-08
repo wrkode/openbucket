@@ -31,11 +31,11 @@ import (
 	"strings"
 	"time"
 
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/event"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/once"
 	"github.com/wrkode/openbucket/internal/store"
-	xnet "github.com/minio/pkg/v3/net"
 
 	"github.com/IBM/sarama"
 	saramatls "github.com/IBM/sarama/tools/tls"

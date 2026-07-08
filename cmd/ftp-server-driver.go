@@ -34,9 +34,9 @@ import (
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
+	"github.com/minio/pkg/v3/mimedb"
 	"github.com/wrkode/openbucket/internal/auth"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
-	"github.com/minio/pkg/v3/mimedb"
 	ftp "goftp.io/server/v2"
 )
 

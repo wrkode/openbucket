@@ -28,12 +28,12 @@ import (
 	"sync/atomic"
 
 	"github.com/minio/madmin-go/v3"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/handlers"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/mcontext"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 const (

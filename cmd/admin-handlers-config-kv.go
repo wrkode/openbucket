@@ -27,6 +27,8 @@ import (
 	"strings"
 
 	"github.com/minio/madmin-go/v3"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/config"
 	"github.com/wrkode/openbucket/internal/config/etcd"
 	xldap "github.com/wrkode/openbucket/internal/config/identity/ldap"
@@ -36,8 +38,6 @@ import (
 	"github.com/wrkode/openbucket/internal/config/storageclass"
 	"github.com/wrkode/openbucket/internal/config/subnet"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // DelConfigKVHandler - DELETE /minio/admin/v3/del-config-kv

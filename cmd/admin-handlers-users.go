@@ -36,13 +36,13 @@ import (
 
 	"github.com/klauspost/compress/zip"
 	"github.com/minio/madmin-go/v3"
-	"github.com/wrkode/openbucket/internal/auth"
-	"github.com/wrkode/openbucket/internal/config/dns"
-	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/minio/mux"
 	xldap "github.com/minio/pkg/v3/ldap"
 	"github.com/minio/pkg/v3/policy"
 	"github.com/puzpuzpuz/xsync/v3"
+	"github.com/wrkode/openbucket/internal/auth"
+	"github.com/wrkode/openbucket/internal/config/dns"
+	"github.com/wrkode/openbucket/internal/logger"
 )
 
 // RemoveUser - DELETE /minio/admin/v3/remove-user?accessKey=<access_key>

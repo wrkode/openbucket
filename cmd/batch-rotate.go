@@ -31,11 +31,11 @@ import (
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/pkg/v3/env"
+	"github.com/minio/pkg/v3/workers"
 	"github.com/wrkode/openbucket/internal/crypto"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/kms"
-	"github.com/minio/pkg/v3/env"
-	"github.com/minio/pkg/v3/workers"
 )
 
 // keyrotate:

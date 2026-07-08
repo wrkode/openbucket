@@ -51,13 +51,34 @@ verify_checksum_mc() {
 add_alias() {
 	for i in $(seq 1 4); do
 		echo "... attempting to add alias $i"
+		retries=60
 		until (mc alias set minio http://127.0.0.1:9000 minioadmin minioadmin); do
+			retries=$((retries - 1))
+			if [ ${retries} -le 0 ]; then
+				echo "server did not become ready in time"
+				docker ps -a
+				MINIO_VERSION=dev /tmp/gopath/bin/docker-compose -f "buildscripts/upgrade-tests/compose.yml" logs --tail 50 || true
+				exit 1
+			fi
 			echo "...waiting... for 5secs" && sleep 5
 		done
 	done
 
 	echo "Sleeping for nginx"
 	sleep 20
+}
+
+# The alias responding does not mean the distributed cluster is ready;
+# gate on cluster readiness before any data verification reads. Only
+# usable against the current server: the RELEASE.2019 image used in the
+# first phase predates the /minio/health/cluster endpoint mc ready polls.
+wait_for_ready() {
+	timeout 5m mc ready minio || {
+		echo "cluster did not become ready in time"
+		docker ps -a
+		MINIO_VERSION=dev /tmp/gopath/bin/docker-compose -f "buildscripts/upgrade-tests/compose.yml" logs --tail 50 || true
+		exit 1
+	}
 }
 
 __init__() {
@@ -100,6 +121,8 @@ main() {
 	MINIO_VERSION=dev /tmp/gopath/bin/docker-compose -f "buildscripts/upgrade-tests/compose.yml" up -d --build
 
 	add_alias
+
+	wait_for_ready
 
 	verify_checksum_after_heal minio/minio-test http://127.0.0.1:9000/minio-test/to-read/hosts
 

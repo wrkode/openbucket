@@ -43,6 +43,8 @@ import (
 	"github.com/minio/minio-go/v7/pkg/credentials"
 	"github.com/minio/minio-go/v7/pkg/encrypt"
 	"github.com/minio/minio-go/v7/pkg/tags"
+	"github.com/minio/mux"
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/amztime"
 	"github.com/wrkode/openbucket/internal/auth"
 	sse "github.com/wrkode/openbucket/internal/bucket/encryption"
@@ -61,8 +63,6 @@ import (
 	"github.com/wrkode/openbucket/internal/kms"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/s3select"
-	"github.com/minio/mux"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // supportedHeadGetReqParams - supported request parameters for GET and HEAD presigned request.

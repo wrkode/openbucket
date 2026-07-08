@@ -33,6 +33,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/auth"
 	objectlock "github.com/wrkode/openbucket/internal/bucket/object/lock"
 	"github.com/wrkode/openbucket/internal/etag"
@@ -41,7 +42,6 @@ import (
 	xjwt "github.com/wrkode/openbucket/internal/jwt"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/mcontext"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // Verify if request has JWT.

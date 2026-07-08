@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/wrkode/openbucket/internal/s3select/jstream"
 	"github.com/minio/simdjson-go"
+	"github.com/wrkode/openbucket/internal/s3select/jstream"
 )
 
 var errBadLimitSpecified = errors.New("Limit value must be a positive integer")

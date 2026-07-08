@@ -25,11 +25,11 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/minio/pkg/v3/policy"
 	"github.com/wrkode/openbucket/internal/crypto"
 	"github.com/wrkode/openbucket/internal/event"
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	"github.com/wrkode/openbucket/internal/pubsub"
-	"github.com/minio/pkg/v3/policy"
 )
 
 // EventNotifier - notifies external systems about events in MinIO.

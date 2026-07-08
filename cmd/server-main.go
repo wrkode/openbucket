@@ -43,6 +43,8 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
 	"github.com/minio/minio-go/v7/pkg/set"
+	"github.com/minio/pkg/v3/certs"
+	"github.com/minio/pkg/v3/env"
 	"github.com/wrkode/openbucket/internal/auth"
 	"github.com/wrkode/openbucket/internal/bucket/bandwidth"
 	"github.com/wrkode/openbucket/internal/color"
@@ -53,8 +55,6 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	xioutil "github.com/wrkode/openbucket/internal/ioutil"
 	"github.com/wrkode/openbucket/internal/logger"
-	"github.com/minio/pkg/v3/certs"
-	"github.com/minio/pkg/v3/env"
 	"gopkg.in/yaml.v2"
 )
 

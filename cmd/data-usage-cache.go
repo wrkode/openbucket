@@ -35,9 +35,9 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/klauspost/compress/zstd"
 	"github.com/minio/madmin-go/v3"
-	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 	"github.com/tinylib/msgp/msgp"
 	"github.com/valyala/bytebufferpool"
+	"github.com/wrkode/openbucket/internal/bucket/lifecycle"
 )
 
 //msgp:clearomitted

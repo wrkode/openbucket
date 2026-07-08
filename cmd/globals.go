@@ -52,12 +52,12 @@ import (
 	xhttp "github.com/wrkode/openbucket/internal/http"
 	etcd "go.etcd.io/etcd/client/v3"
 
-	levent "github.com/wrkode/openbucket/internal/config/lambda/event"
-	"github.com/wrkode/openbucket/internal/event"
-	"github.com/wrkode/openbucket/internal/pubsub"
 	"github.com/minio/pkg/v3/certs"
 	"github.com/minio/pkg/v3/env"
 	xnet "github.com/minio/pkg/v3/net"
+	levent "github.com/wrkode/openbucket/internal/config/lambda/event"
+	"github.com/wrkode/openbucket/internal/event"
+	"github.com/wrkode/openbucket/internal/pubsub"
 )
 
 // minio configuration related constants.

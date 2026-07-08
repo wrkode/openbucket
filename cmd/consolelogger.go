@@ -26,11 +26,11 @@ import (
 
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/madmin-go/v3/logger/log"
+	xnet "github.com/minio/pkg/v3/net"
 	"github.com/wrkode/openbucket/internal/logger"
 	"github.com/wrkode/openbucket/internal/logger/target/console"
 	types "github.com/wrkode/openbucket/internal/logger/target/loggertypes"
 	"github.com/wrkode/openbucket/internal/pubsub"
-	xnet "github.com/minio/pkg/v3/net"
 )
 
 // number of log messages to buffer

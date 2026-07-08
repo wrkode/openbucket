@@ -26,8 +26,8 @@ import (
 
 	ldap "github.com/go-ldap/ldap/v3"
 	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/wrkode/openbucket/internal/auth"
 	xldap "github.com/minio/pkg/v3/ldap"
+	"github.com/wrkode/openbucket/internal/auth"
 )
 
 // LookupUserDN searches for the full DN and groups of a given short/login
