@@ -66,9 +66,13 @@ add_alias() {
 
 	echo "Sleeping for nginx"
 	sleep 20
+}
 
-	# the alias responding does not mean the distributed cluster is ready;
-	# gate on cluster readiness before any data verification reads
+# The alias responding does not mean the distributed cluster is ready;
+# gate on cluster readiness before any data verification reads. Only
+# usable against the current server: the RELEASE.2019 image used in the
+# first phase predates the /minio/health/cluster endpoint mc ready polls.
+wait_for_ready() {
 	timeout 5m mc ready minio || {
 		echo "cluster did not become ready in time"
 		docker ps -a
@@ -117,6 +121,8 @@ main() {
 	MINIO_VERSION=dev /tmp/gopath/bin/docker-compose -f "buildscripts/upgrade-tests/compose.yml" up -d --build
 
 	add_alias
+
+	wait_for_ready
 
 	verify_checksum_after_heal minio/minio-test http://127.0.0.1:9000/minio-test/to-read/hosts
 
